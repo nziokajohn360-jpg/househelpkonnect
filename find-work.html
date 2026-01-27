@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Work - HouseHelpKonnect</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">HouseHelpKonnect</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="find-work.html" class="active">Find Work</a></li>
+                <li><a href="find-househelp.html">Find a Househelp</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="form-section">
+        <h1>Apply to Find Work</h1>
+        <form id="workForm">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+
+            <label for="skills">Skills & Experience:</label>
+            <textarea id="skills" name="skills" rows="4" required></textarea>
+
+            <label for="availability">Availability:</label>
+            <select id="availability" name="availability" required>
+                <option value="">Select</option>
+                <option value="full-time">Full-time</option>
+                <option value="part-time">Part-time</option>
+                <option value="weekends">Weekends Only</option>
+            </select>
+
+            <button type="submit" class="btn-primary">Submit Application</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 HouseHelpKonnect. All rights reserved.</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
