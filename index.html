@@ -5,13 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HouseHelpKonnect - Home</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
 <!-- Navigation -->
 <header>
   <nav class="navbar">
+
     <div class="logo">HouseHelpKonnect</div>
+
+    <div class="sidebar-toggle" id="sidebarToggle">
+      ☰
+    </div>
+
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -22,6 +29,23 @@
     </ul>
   </nav>
 </header>
+
+<!-- Sidebar Menu -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <h2>HouseHelpKonnect</h2>
+    <span class="close-btn" id="closeSidebar">&times;</span>
+  </div>
+
+  <ul class="sidebar-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="find-work.html">Find Work</a></li>
+    <li><a href="find-househelp.html">Find a Househelp</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="privacy.html">Privacy Policy</a></li>
+  </ul>
+</aside>
 
 <!-- Hero Section -->
 <section class="hero">
@@ -140,5 +164,6 @@
   <p>&copy; 2026 HouseHelpKonnect. All rights reserved.</p>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>

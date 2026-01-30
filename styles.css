@@ -6,12 +6,19 @@
     font-family: 'Arial', sans-serif;
 }
 
+html,body{
+    zoom:1;
+    overflow-x: hidden;
+    transform: none;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     line-height: 1.6;
     color: #333;
     background-color: #f9f9f9;
-    zoom:1;
-    overflow-x: none;
 }
 
 /* Navbar */
@@ -151,20 +158,6 @@ footer {
     color: #fff;
     margin-top: 2rem;
 }
-
-/* Responsive */
-@media(max-width:768px) {
-    .features {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .navbar .nav-links {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-}
-
 
 /* --- How It Works Section --- */
 .how-it-works {
@@ -309,16 +302,6 @@ footer {
      width:250px;
      }
 
-/* Responsive Adjustments */
-@media(max-width:768px) {
-  .steps, .stat-cards, .testimonial-cards { 
-    flex-direction: column; 
-    align-items:center; }
-  .navbar .nav-links { 
-    flex-direction:column;
-     gap:0.5rem; }
-}
-
 /* About Hero Section */
 .about-hero {
   text-align: center;
@@ -406,13 +389,6 @@ footer {
   margin-bottom:0.5rem;
 }
 
-/* Responsive */
-@media(max-width:768px){
-  .mission-vision, .why-choose-us .benefits, .values {
-    flex-direction: column;
-    align-items: center;
-  }
-}
 
 /* Privacy Hero Section */
 .privacy-hero {
@@ -487,26 +463,6 @@ a:hover {
 
 /* Small devices (phones, up to 576px) */
 @media (max-width: 576px) {
-  /* Navbar */
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-  }
-  .navbar .nav-links {
-    flex-direction: column;
-    width: 100%;
-    margin-top: 1rem;
-  }
-  .navbar .nav-links li {
-    width: 100%;
-  }
-  .navbar .nav-links li a {
-    display: block;
-    width: 100%;
-    padding: 0.5rem 0;
-  }
-
   /* Hero sections */
   .hero, .about-hero, .privacy-hero {
     padding: 3rem 1rem;
@@ -557,14 +513,13 @@ a:hover {
 @media (max-width: 768px) {
   /* Navbar */
   .navbar {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
   }
-  .navbar .nav-links {
-    flex-direction: column;
-    gap: 0.5rem;
+  .navbar .nav-links{
+    display:none
   }
-
   /* Hero sections */
   .hero, .about-hero, .privacy-hero {
     padding: 4rem 2rem;
@@ -572,7 +527,6 @@ a:hover {
   .hero h1, .about-hero h1, .privacy-hero h1 {
     font-size: 2.2rem;
   }
-
   /* Cards stacking */
   .features, .steps, .stat-cards, .testimonial-cards, .benefits, .values, .mv-item {
     flex-direction: column;
@@ -594,7 +548,13 @@ a:hover {
     display: block;
     margin: 0.5rem 0;
   }
-}
+ navbar i{
+    display:block;
+    color:#fff;
+    font-size:1.5rem;
+    cursor:pointer;
+  }
+ }
 
 /* Large devices (desktops, up to 1024px) */
 @media (max-width: 1024px) {
@@ -606,6 +566,27 @@ a:hover {
   }
   .steps, .stat-cards, .testimonial-cards, .benefits, .values {
     gap: 1.5rem;
+  }
+  .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+  .steps, .stat-cards, .testimonial-cards { 
+    flex-direction: column; 
+    align-items:center; 
+  }
+  .navbar .nav-links { 
+    flex-direction:column;
+     gap:0.5rem; 
+    }
+     .mission-vision, .why-choose-us .benefits, .values {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -630,3 +611,113 @@ a:hover {
     font-size: 0.95rem;
   }
 }
+
+
+@media(min-width:769px){
+.navbar i{
+  display: none;
+}
+}
+
+/* ===============================
+   MOBILE SIDEBAR MENU
+================================ */
+
+/* Hamburger Toggle Button */
+.sidebar-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+  padding: 0.5rem;
+}
+
+/* Sidebar Container */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  width: 280px;
+  height: 100vh;
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 1.5rem 1rem;
+  transition: left 0.3s ease-in-out;
+  z-index: 1100;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Sidebar Open State */
+.sidebar.active {
+  left: 0;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.sidebar-header h2 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Close Button */
+.close-btn {
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* Sidebar Navigation Links */
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-links li {
+  margin-bottom: 1rem;
+}
+
+.sidebar-links a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #fff;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.sidebar-links a:hover {
+  background-color: #388E3C;
+}
+
+/* Show Sidebar Toggle on Mobile */
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    display: block;
+    margin-left: auto; /* Push to right side of header */
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 240px;
+  }
+
+  .sidebar-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .sidebar-links a {
+    font-size: 1rem;
+  }
+}
+
